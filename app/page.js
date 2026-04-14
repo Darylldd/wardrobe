@@ -6,7 +6,7 @@ export default function LandingPage() {
 
       {/* Nav */}
       <nav className="flex items-center justify-between px-8 py-6 ruled-b">
-        <span className="display text-2xl text-cream tracking-tight">Fitcheck</span>
+        <span className="display text-2xl text-cream tracking-tight">FihhChehh</span>
         <div className="flex items-center gap-8">
           <Link href="/login" className="label-xs text-ink-300 hover:text-cream transition-colors duration-200">
             Sign In
@@ -101,7 +101,7 @@ export default function LandingPage() {
 
       {/* Bottom strip */}
       <footer className="ruled px-10 py-5 flex items-center justify-between">
-        <span className="label-xs text-ink-500">© 2025 Fitcheck</span>
+        <span className="label-xs text-ink-500">© 2025 FihhChehh</span>
         <span className="label-xs text-ink-500">Built for the indecisive</span>
       </footer>
     </main>
