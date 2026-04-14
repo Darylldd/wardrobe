@@ -15,18 +15,18 @@ export default function RegisterForm() {
   const [loading, setLoading] = useState(false);
 
   const validate = () => {
-    const errs = {};
-    if (!form.displayName)               errs.displayName = "Required";
-    if (!form.email)                     errs.email       = "Required";
-    if (form.password.length < 6)        errs.password    = "Min 6 characters";
-    if (form.password !== form.confirm)  errs.confirm     = "Passwords don't match";
-    return errs;
+    const e = {};
+    if (!form.displayName)             e.displayName = "Required";
+    if (!form.email)                   e.email       = "Required";
+    if (form.password.length < 6)      e.password    = "Min 6 characters";
+    if (form.password !== form.confirm)e.confirm     = "Passwords do not match";
+    return e;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const errs = validate();
-    if (Object.keys(errs).length) return setErrors(errs);
+  const handleSubmit = async (ev) => {
+    ev.preventDefault();
+    const e = validate();
+    if (Object.keys(e).length) return setErrors(e);
     setLoading(true);
     try {
       await registerUser(form.email, form.password, form.displayName);
@@ -39,34 +39,35 @@ export default function RegisterForm() {
     }
   };
 
-  const u = (field) => (e) => setForm({ ...form, [field]: e.target.value });
+  const u = (f) => (e) => setForm({ ...form, [f]: e.target.value });
 
   return (
-    <div className="w-full max-w-sm mx-auto animate-fade-up">
-
-      <div className="mb-10">
-        <div className="flex items-center gap-3 mb-6">
-          <span className="gold-line" />
-          <span className="label-xs text-gold">New Account</span>
-        </div>
-        <h2 className="display text-5xl text-cream mb-3">Build your<br />wardrobe.</h2>
-        <p className="text-ink-400 text-sm font-light">Create an account to get started</p>
+    <div className="w-full max-w-sm mx-auto anim-fade-up">
+      <div className="mb-8">
+        <p className="label text-olive mb-3">New account</p>
+        <h2 className="font-typewriter text-4xl text-paper-900 leading-tight">
+          Build your<br />wardrobe.
+        </h2>
+        <p className="text-paper-600 text-sm font-light mt-3">
+          Free forever. No credit card needed.
+        </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="flex flex-col gap-7">
-        <Input label="Full Name"        placeholder="Alex Rivera"        value={form.displayName} onChange={u("displayName")} error={errors.displayName} />
-        <Input label="Email Address"    type="email" placeholder="you@email.com" value={form.email}        onChange={u("email")}        error={errors.email} />
-        <Input label="Password"         type="password" placeholder="Min 6 characters" value={form.password}    onChange={u("password")}    error={errors.password} />
-        <Input label="Confirm Password" type="password" placeholder="••••••••"     value={form.confirm}     onChange={u("confirm")}     error={errors.confirm} />
+      <div className="bg-white border border-paper-300 rounded-sm p-6 shadow-paper">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+          <Input label="Your name"       placeholder="Alex Rivera"     value={form.displayName} onChange={u("displayName")} error={errors.displayName} />
+          <Input label="Email address"   type="email" placeholder="you@email.com" value={form.email}        onChange={u("email")}        error={errors.email} />
+          <Input label="Password"        type="password" placeholder="Min 6 characters" value={form.password}    onChange={u("password")}    error={errors.password} />
+          <Input label="Confirm password"type="password" placeholder="Same again"    value={form.confirm}     onChange={u("confirm")}     error={errors.confirm} />
+          <Button type="submit" size="lg" loading={loading} className="w-full mt-1">
+            Create account
+          </Button>
+        </form>
+      </div>
 
-        <Button type="submit" size="lg" loading={loading} className="w-full mt-2">
-          Create Account
-        </Button>
-      </form>
-
-      <p className="text-center text-ink-500 text-xs font-light mt-8">
-        Have an account?{" "}
-        <Link href="/login" className="text-gold hover:text-gold-light transition-colors underline underline-offset-4">
+      <p className="text-center text-paper-500 text-sm font-light mt-6">
+        Already have an account?{" "}
+        <Link href="/login" className="text-denim hover:text-denim-dark transition-colors underline underline-offset-2">
           Sign in
         </Link>
       </p>
