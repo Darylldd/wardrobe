@@ -3,7 +3,7 @@ import { AuthProvider } from "@/context/AuthContext";
 import { Toaster } from "react-hot-toast";
 
 export const metadata = {
-  title: "FitCheck — Your Digital Closet",
+  title: "FihhChehh — Your Digital Closet",
   description: "AI-powered wardrobe styling from your own clothes",
 };
 

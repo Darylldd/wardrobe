@@ -6,7 +6,7 @@ export default function LandingPage() {
 
       {/* Nav */}
       <nav className="flex items-center justify-between px-6 md:px-10 py-5 border-b border-paper-300/60">
-        <span className="font-typewriter text-xl text-paper-900 tracking-tight">FitCheck</span>
+        <span className="font-typewriter text-xl text-paper-900 tracking-tight">FihhChehh</span>
         <div className="flex items-center gap-3">
           <Link href="/login" className="label text-paper-600 hover:text-paper-900 transition-colors px-4 py-2">
             Sign in

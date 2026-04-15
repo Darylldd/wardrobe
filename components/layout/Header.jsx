@@ -13,7 +13,7 @@ const pageMeta = {
 export default function Header() {
   const pathname = usePathname();
   const { profile } = useAuth();
-  const page = pageMeta[pathname] || { title: "FitCheck", note: "" };
+  const page = pageMeta[pathname] || { title: "FihhChehh", note: "" };
 
   return (
     <header className="sticky top-0 z-30 bg-paper-100/90 backdrop-blur-sm border-b border-paper-300/60 px-5 md:px-7 py-3.5 flex items-center justify-between">

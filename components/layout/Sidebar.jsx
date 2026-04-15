@@ -37,7 +37,7 @@ export default function Sidebar() {
       >
         {/* Logo */}
         <div className="px-6 py-5 border-b border-paper-300">
-          <span className="font-typewriter text-xl text-paper-900">FitCheck</span>
+          <span className="font-typewriter text-xl text-paper-900">FihhChehh</span>
           <p className="text-paper-500 text-xs font-light mt-0.5">Your digital closet</p>
         </div>
 
