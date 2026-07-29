@@ -4,7 +4,7 @@ A digital closet. Photograph the clothes you actually own, build outfits from th
 
 Built this to get more hands-on with Next.js App Router, Firebase, and shipping something start to finish. Not trying to be the next startup, just a project I wanted to actually finish and make look decent.
 
-![FihhChehh](./docs/screenshot.png)
+
 
 ## What it does
 
